@@ -1,5 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+import styled, { keyframes } from 'styled-components';
+
+const loading = props => keyframes`
+  0%{
+      width: 0%;
+  }
+  100% {
+    width: ${props};
+  }
+`;
 
 const SkillsContainer = styled.ul`
   background: #3B3B44;
@@ -34,48 +43,81 @@ const SkillName = styled.div`
   color: white;
   -webkit-font-smoothing: antialiased;
 `;
+const Percentage = styled.div`
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content:
+  text-align:right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -1px;
+  font-size: 13px;
+  font-weight: 900;
+`;
 const ProgressBar = styled.div`
   width: 100%;
   background: #241e1e38;
-  min-height: 10px;
+  min-height: 15px;
   border-radius: 25px;
+  position: relative;
 `;
 const Progress = styled.div`
-  height: 10px;
-  width: ${props => props.progress};
+  min-height: 15px;
+  width: ${props => props.progress}
+  animation: ${props => loading(props.progress)} 1.3s ease
   background: white;
   border-radius: 25px;
-  transition: width 100% ease-in-out;
 `;
-function Skills({ percent }) {
-  return (
-    <SkillsContainer>
-      <Row>
-        <SkillName>Development</SkillName>
-        <ProgressBar>
-          <Progress progress="70%" />
-        </ProgressBar>
-      </Row>
-      <Row>
-        <SkillName>Design</SkillName>
-        <ProgressBar>
-          <Progress progress="90%" />
-        </ProgressBar>
-      </Row>
-      <Row>
-        <SkillName>Javascript</SkillName>
-        <ProgressBar>
-          <Progress progress="80%" />
-        </ProgressBar>
-      </Row>
-      <Row>
-        <SkillName>React</SkillName>
-        <ProgressBar>
-          <Progress progress="80%" />
-        </ProgressBar>
-      </Row>
-    </SkillsContainer>
-  );
+
+class Skills extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      development: '80%',
+      design: '90%',
+      javascript: '68%',
+      react: '75%'
+    };
+  }
+  render() {
+    return (
+      <SkillsContainer>
+        <Row>
+          <SkillName>Development</SkillName>
+          <ProgressBar>
+            <Progress progress={this.state.development} />
+            <Percentage>{this.state.development}</Percentage>
+          </ProgressBar>
+        </Row>
+        <Row>
+          <SkillName>Design</SkillName>
+          <ProgressBar>
+            <Progress progress={this.state.design} />
+            <Percentage>{this.state.design}</Percentage>
+          </ProgressBar>
+        </Row>
+        <Row>
+          <SkillName>Javascript</SkillName>
+          <ProgressBar>
+            <Progress progress={this.state.javascript} />
+            <Percentage>{this.state.javascript}</Percentage>
+          </ProgressBar>
+        </Row>
+        <Row>
+          <SkillName>React</SkillName>
+          <ProgressBar>
+            <Progress progress={this.state.react} />
+            <Percentage>{this.state.react}</Percentage>
+          </ProgressBar>
+        </Row>
+      </SkillsContainer>
+    );
+  }
 }
 
 export default Skills;
