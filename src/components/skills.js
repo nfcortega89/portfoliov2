@@ -11,17 +11,16 @@ const loading = props => keyframes`
 `;
 
 const SkillsContainer = styled.ul`
-  background: #3B3B44;
+  background: #3b3b44;
   box-sizing: border-box;
   margin: 0;
-  padding: 0
+  padding: 5em 2em 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  min-height: 450px;
-  padding: 20px;
+  width: 100%;
+  min-height: 500px;
 `;
 const Row = styled.li`
   margin: 12px;

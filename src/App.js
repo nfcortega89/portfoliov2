@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Skills from './components/skills';
+import styled from 'styled-components';
+import Services from './components/services';
 
+const app = styled.div`
+  height: 100%;
+  min-width: 1224px;
+`;
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Skills />
-      </div>
+      <app>
+        <Services />
+      </app>
     );
   }
 }
