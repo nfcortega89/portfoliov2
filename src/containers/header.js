@@ -5,20 +5,20 @@ import headshot from '../assets/headshot.jpg';
 const Wrapper = styled.div`
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(${headshot});
+  box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.8);
   background-size: cover;
-  background-position: 50% 28%;
+  background-position: 50% 35%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   filter: grayscale(92%);
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 const HeadContainer = styled.div`
-  margin: 0 0 5em
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,17 +30,15 @@ const Head = styled.h1`
   -webkit-font-smoothing: antialiased;
   font-size: 56px;
   text-transform: uppercase;
-  margin: 0 0.7em;
-  padding: 0.6em 0 0;
+  margin: 0.6em 0.7em 0;
 `;
 const SubHead = styled.p`
   color: white;
   -webkit-font-smoothing: antialiased;
-  margin: 0 0.7em;
+  margin: 0 0.7em 0.6em;
   font-size: 56px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0 0 0.6em;
 `;
 const LeftLine = styled.div`
   height: 195px;
