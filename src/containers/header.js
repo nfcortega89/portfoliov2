@@ -3,35 +3,65 @@ import styled from 'styled-components';
 import headshot from '../assets/headshot.jpg';
 
 const Wrapper = styled.div`
-  background-image: url(${headshot});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url(${headshot});
   background-size: cover;
   background-position: 50% 28%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  filter: grayscale();
+  filter: grayscale(92%);
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
 `;
 const HeadContainer = styled.div`
+  margin: 0 0 5em
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 `;
 const Head = styled.h1`
-  font-size: 36px;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-size: 56px;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0.7em;
+  padding: 0.6em 0 0;
 `;
 const SubHead = styled.p`
-  margin: 0;
-  font-size: 35px;
-  letter-spacing: 0px;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 0.7em;
+  font-size: 56px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  padding: 0 0 0.6em;
+`;
+const LeftLine = styled.div`
+  height: 195px;
+  border-left: 5px solid white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+`;
+const BottomLine = styled.div`
+  width: 390px;
+  border-bottom: 5px solid white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+`;
+const TopLine = styled.div`
+  width: 800px;
+  border-bottom: 5px solid white;
+  position: absolute;
+  left: 0;
+  top: 0;
 `;
 
 class Header extends Component {
@@ -39,8 +69,11 @@ class Header extends Component {
     return (
       <Wrapper>
         <HeadContainer>
-          <Head>Hi I'm Niccolo Ortega</Head>
+          <Head>Hi I am Niccolo Ortega</Head>
           <SubHead>Designer & Developer</SubHead>
+          <LeftLine />
+          <BottomLine />
+          <TopLine />
         </HeadContainer>
       </Wrapper>
     );
