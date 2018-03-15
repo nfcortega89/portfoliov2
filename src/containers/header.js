@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import headshot from '../assets/headshot.jpg';
 
 const Wrapper = styled.div`
+  background-image: url(${headshot});
+  background-size: cover;
+  background-position: 50% 28%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: grayscale();
   width: 100%;
   height: 100vh;
   display: flex;
