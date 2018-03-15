@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import headshot from '../assets/headshot.jpg';
 
+const strikethrough = keyframes`
+  0% {
+    display: none;
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1
+    display: block;
+    width: 100%;
+    visibility: visible;
+  }
+`;
 const Wrapper = styled.div`
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(${headshot});
@@ -57,9 +71,16 @@ const BottomLine = styled.div`
 const TopLine = styled.div`
   width: 800px;
   border-bottom: 5px solid white;
+  animation: ${strikethrough} 2s infinite;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
   position: absolute;
   left: 0;
   top: 0;
+  &:hover {
+  }
 `;
 
 class Header extends Component {
