@@ -87,14 +87,14 @@ class Skills extends Component {
     return (
       <SkillsContainer>
         <Row>
-          <SkillName>Development</SkillName>
+          <SkillName>HTML</SkillName>
           <ProgressBar>
             <Progress progress={this.state.development} />
             <Percentage>{this.state.development}</Percentage>
           </ProgressBar>
         </Row>
         <Row>
-          <SkillName>Design</SkillName>
+          <SkillName>CSS</SkillName>
           <ProgressBar>
             <Progress progress={this.state.design} />
             <Percentage>{this.state.design}</Percentage>
