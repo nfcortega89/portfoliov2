@@ -40,6 +40,7 @@ const HeadContainer = styled.div`
   position: relative;
 `;
 const Head = styled.h1`
+  font-family: 'Nunito', sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
   font-size: 56px;
@@ -47,6 +48,7 @@ const Head = styled.h1`
   margin: 0.6em 0.7em 0;
 `;
 const SubHead = styled.p`
+  font-family: 'Nunito', sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
   margin: 0 0.7em 0.6em;
@@ -55,7 +57,7 @@ const SubHead = styled.p`
   text-transform: uppercase;
 `;
 const LeftLine = styled.div`
-  height: 195px;
+  height: 215px;
   border-left: 5px solid white;
   position: absolute;
   left: 0;
