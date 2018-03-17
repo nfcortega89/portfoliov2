@@ -16,7 +16,7 @@ const strikethrough = keyframes`
     visibility: visible;
   }
 `;
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(${headshot});
   box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.8);

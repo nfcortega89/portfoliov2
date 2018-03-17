@@ -1,15 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  box-sizing: border-box;
-  padding: 2.5em 0 2.5em;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 const ServicesWrapper = styled.div`
   background: #f3f3f3;
   position: relative;
@@ -25,34 +16,31 @@ const Title = styled.h2`
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  margin-left: 5em;
-  padding-bottom: 1em;
+  margin-left: 4em;
+  padding: 1em;
 `;
-const Brush1 = styled.hr`
+const Brush1 = styled.div`
   position: absolute;
-  right: -8px;
-  top: -18px;
   width: 80px;
-  height: 3px;
-  background: black;
-  border: 0;
-  margin-left: 1.5em;
+  height: 1px;
+  border-bottom: 4px solid black;
+  right: 8px;
+  top: 17px;
 `;
-const Brush2 = styled.hr`
+const Brush2 = styled.div`
   position: absolute;
-  left: -10px;
-  top: 19px;
   width: 85px;
-  height: 2px;
-  background: black;
-  border: 0;
+  height: 1px;
+  border-bottom: 4px solid black;
+  left: 5px;
+  bottom: 17px;
 `;
 const ServiceBlock = styled.div`
-  margin-left: 6em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 `;
 const Row = styled.div`
   display: flex;
@@ -84,108 +72,96 @@ const Info = styled.div`
   margin-top: 1.5em;
 `;
 
-const Service = () => {
-  return (
-    <Container>
+class Service extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      services: [
+        {
+          name: 'Design',
+          info: "Keen eye for detail. It's the little things that matter."
+        },
+        {
+          name: 'Development',
+          info: 'Gathering information to plan and design comes first.'
+        },
+        {
+          name: 'Fast',
+          info: 'Fast load times and lag free interaction, my highest priority.'
+        },
+        {
+          name: 'Responsive',
+          info: 'My layouts will work on any device, big or small.'
+        },
+        {
+          name: 'Intuitive',
+          info: 'Strong preference for easy to use UX/UI.'
+        },
+        {
+          name: 'Dynamic',
+          info:
+            'Websites dont have to be static, I love making pages come to life.'
+        }
+      ]
+    };
+  }
+  renderServices() {
+    const row1 = this.state.services.slice(0, 3);
+    const row2 = this.state.services.slice(3);
+    return (
+      <ServiceBlock>
+        <Row>
+          {row1.map((service, index) => {
+            return (
+              <ServiceCard key={index}>
+                <svg
+                  fill="#000000"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  width="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
+                  <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
+                <ServiceDescription>{service.name}</ServiceDescription>
+                <Info>{service.info}</Info>
+              </ServiceCard>
+            );
+          })}
+        </Row>
+        <Row>
+          {row2.map((service, index) => {
+            return (
+              <ServiceCard key={index}>
+                <svg
+                  fill="#000000"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  width="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
+                  <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
+                <ServiceDescription>{service.name}</ServiceDescription>
+                <Info>{service.info}</Info>
+              </ServiceCard>
+            );
+          })}
+        </Row>
+      </ServiceBlock>
+    );
+  }
+  render() {
+    return (
       <ServicesWrapper>
         <Title>
           <Brush1 />My skills & services
           <Brush2 />
         </Title>
-        <ServiceBlock>
-          <Row>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Design</ServiceDescription>
-              <Info>
-                Keen eye for detail. It's the little things that matter.
-              </Info>
-            </ServiceCard>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Development</ServiceDescription>
-              <Info>Gathering information to plan and design comes first.</Info>
-            </ServiceCard>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Fast</ServiceDescription>
-              <Info>
-                Fast load times and lag free interaction, my highest priority.
-              </Info>
-            </ServiceCard>
-          </Row>
-          <Row>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Responsive</ServiceDescription>
-              <Info>My layouts will work on any device, big or small.</Info>
-            </ServiceCard>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Intuitive</ServiceDescription>
-              <Info>Strong preference for easy to use UX/UI.</Info>
-            </ServiceCard>
-            <ServiceCard>
-              <svg
-                fill="#000000"
-                height="36"
-                viewBox="0 0 24 24"
-                width="36"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                <path d="M0 0h24v24H0z" fill="none" />
-              </svg>
-              <ServiceDescription>Dynamic</ServiceDescription>
-              <Info>
-                Websites dont have to be static, I love making pages come to
-                life.
-              </Info>
-            </ServiceCard>
-          </Row>
-        </ServiceBlock>
+        {this.renderServices()}
       </ServicesWrapper>
-    </Container>
-  );
-};
+    );
+  }
+}
 
 export default Service;

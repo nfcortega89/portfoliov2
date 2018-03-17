@@ -8,7 +8,7 @@ const App = styled.div`
   height: 100%;
   min-width: 1224px;
 `;
-const TwoBlocks = styled.div`
+const SSBlock = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,10 +19,10 @@ class app extends Component {
     return (
       <App>
         <Header />
-        <TwoBlocks>
+        <SSBlock>
           <Services />
           <Skills />
-        </TwoBlocks>
+        </SSBlock>
       </App>
     );
   }
