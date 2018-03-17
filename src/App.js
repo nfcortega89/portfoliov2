@@ -4,7 +4,7 @@ import Services from './components/services';
 import Skills from './components/skills';
 import Header from './containers/header';
 
-const app = styled.div`
+const App = styled.div`
   height: 100%;
   min-width: 1224px;
 `;
@@ -14,18 +14,18 @@ const TwoBlocks = styled.div`
   align-items: center;
   margin: 0 auto;
 `;
-class App extends Component {
+class app extends Component {
   render() {
     return (
-      <app>
+      <App>
         <Header />
         <TwoBlocks>
           <Services />
           <Skills />
         </TwoBlocks>
-      </app>
+      </App>
     );
   }
 }
 
-export default App;
+export default app;

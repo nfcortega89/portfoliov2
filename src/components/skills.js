@@ -77,45 +77,42 @@ class Skills extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      development: '80%',
-      design: '90%',
-      javascript: '68%',
-      react: '75%'
+      skills: [
+        {
+          name: 'HTML',
+          score: '92%'
+        },
+        {
+          name: 'CSS',
+          score: '85%'
+        },
+        {
+          name: 'React',
+          score: '82%'
+        },
+        {
+          name: 'Javascript',
+          score: '75%'
+        }
+      ]
     };
+    this.renderList = this.renderList.bind(this);
+  }
+  renderList() {
+    return this.state.skills.map((skill, index) => {
+      return (
+        <Row key={index}>
+          <SkillName>{skill.name}</SkillName>
+          <ProgressBar>
+            <Progress progress={skill.score} />
+            <Percentage>{skill.score}</Percentage>
+          </ProgressBar>
+        </Row>
+      );
+    });
   }
   render() {
-    return (
-      <SkillsContainer>
-        <Row>
-          <SkillName>HTML</SkillName>
-          <ProgressBar>
-            <Progress progress={this.state.development} />
-            <Percentage>{this.state.development}</Percentage>
-          </ProgressBar>
-        </Row>
-        <Row>
-          <SkillName>CSS</SkillName>
-          <ProgressBar>
-            <Progress progress={this.state.design} />
-            <Percentage>{this.state.design}</Percentage>
-          </ProgressBar>
-        </Row>
-        <Row>
-          <SkillName>Javascript</SkillName>
-          <ProgressBar>
-            <Progress progress={this.state.javascript} />
-            <Percentage>{this.state.javascript}</Percentage>
-          </ProgressBar>
-        </Row>
-        <Row>
-          <SkillName>React</SkillName>
-          <ProgressBar>
-            <Progress progress={this.state.react} />
-            <Percentage>{this.state.react}</Percentage>
-          </ProgressBar>
-        </Row>
-      </SkillsContainer>
-    );
+    return <SkillsContainer>{this.renderList()}</SkillsContainer>;
   }
 }
 
