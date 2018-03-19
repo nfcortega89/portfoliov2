@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import { toggleNav, closeNav } from '../actions/header';
+import { bindActionCreators } from 'redux';
+import * as actions from '../actions/header';
 import headshot from '../assets/headshot.jpg';
 
 const strikethroughTop = keyframes`
@@ -131,6 +136,7 @@ class Header extends Component {
         </HeadContainer>
         <Nav>
           <svg
+            onClick={this.props.toggleNav}
             fill="#ffffff"
             height="36"
             viewBox="0 0 24 24"
@@ -145,4 +151,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = ({ header }) => ({
+  open: header.open
+});
+
+export default withRouter(connect(mapStateToProps, actions)(Header));
