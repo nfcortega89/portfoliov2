@@ -14,13 +14,13 @@ const SkillsContainer = styled.ul`
   background: #3b3b44;
   box-sizing: border-box;
   margin: 0;
-  padding: 5em 2em 0;
+  padding: 3em 9em 3em 3em;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 500px;
+  min-height: 545px;
 `;
 const Row = styled.li`
   margin: 12px;
@@ -31,7 +31,7 @@ const Row = styled.li`
   align-items: center;
   justify-content: center;
 `;
-const SkillName = styled.div`
+const SkillName = styled.p`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -41,22 +41,24 @@ const SkillName = styled.div`
   font-weight: 600;
   color: white;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Nunito', sans-serif;
 `;
-const Percentage = styled.div`
+const Percentage = styled.p`
   z-index: 9;
   display: flex;
   align-items: center;
   justify-content:
   text-align:right;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 6px;
+  top: -6px;
   bottom: 0;
   color: white;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -1px;
   font-size: 13px;
   font-weight: 900;
+  font-family: 'Nunito', sans-serif;
 `;
 const ProgressBar = styled.div`
   width: 100%;

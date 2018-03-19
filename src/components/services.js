@@ -6,17 +6,19 @@ const ServicesWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 500px;
+  min-height: 545px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  padding-left: 4em;
 `;
 const Title = styled.h2`
+  font-family: 'Nunito', sans-serif;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  margin-left: 3em;
+  margin-left: 0.8em;
   padding: 1em;
 `;
 const Brush1 = styled.div`
@@ -54,19 +56,19 @@ const ServiceCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  min-width: 202px;
-  min-height: 150px;
-  max-width: 202px;
-  max-height: 150px;
+  min-width: 230px;
+  min-height: 175px;
 `;
-const ServiceDescription = styled.div`
+const ServiceDescription = styled.p`
+  font-family: 'Nunito', sans-serif;
   text-transform: uppercase;
   color: black;
   -webkit-font-smoothing: antialiased;
   margin-top: 0.5em;
   font-weight: 600;
 `;
-const Info = styled.div`
+const Info = styled.p`
+  font-family: 'Nunito', sans-serif;
   color: grey;
   -webkit-font-smoothing: antialiased;
   margin-top: 1.5em;
