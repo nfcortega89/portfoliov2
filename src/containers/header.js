@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import headshot from '../assets/headshot.jpg';
 
-const strikethrough = keyframes`
-  0% {
-    display: none;
-    width: 0px;
-    opacity: 0;
-    visibility: hidden;
-  }
+const strikethroughTop = keyframes`
   100% {
-    opacity: 1
-    display: block;
-    width: 100%;
-    visibility: visible;
+    width: 800px;
+  }
+`;
+const strikethroughBottom = keyframes`
+  100% {
+    width: 390px;
+  }
+`;
+const strikethroughLeft = keyframes`
+  100% {
+    height: 215px;
   }
 `;
 const Wrapper = styled.header`
@@ -57,32 +58,45 @@ const SubHead = styled.p`
   text-transform: uppercase;
 `;
 const LeftLine = styled.div`
-  height: 215px;
+  height: 0;
   border-left: 5px solid white;
   position: absolute;
   left: 0;
   bottom: 0;
+  animation: ${strikethroughLeft} 1s infinite;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 1.4s;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
 `;
 const BottomLine = styled.div`
-  width: 390px;
+  width: 0px;
   border-bottom: 5px solid white;
   position: absolute;
-  left: 0;
+  right: 390px;
   bottom: 0;
+  animation: ${strikethroughBottom} 1s infinite;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
 `;
 const TopLine = styled.div`
-  width: 800px;
-  border-bottom: 5px solid white;
-  animation: ${strikethrough} 2s infinite;
-  animation-iteration-count: 1;
-  animation-delay: 2s;
-  animation-timing-function: ease-in;
-  animation-direction: alternate;
   position: absolute;
-  left: 0;
   top: 0;
-  &:hover {
-  }
+  left: 0;
+  width: 0px;
+  z-index: 9
+  height: 2px;
+  border-bottom: 5px solid white;
+  animation: ${strikethroughTop} 1s infinite;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 2.3s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 `;
 
 class Header extends Component {

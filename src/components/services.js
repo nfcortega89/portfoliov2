@@ -16,7 +16,7 @@ const Title = styled.h2`
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   position: relative;
-  margin-left: 4em;
+  margin-left: 3em;
   padding: 1em;
 `;
 const Brush1 = styled.div`
@@ -24,7 +24,7 @@ const Brush1 = styled.div`
   width: 80px;
   height: 1px;
   border-bottom: 4px solid black;
-  right: 8px;
+  right: 18px;
   top: 17px;
 `;
 const Brush2 = styled.div`
@@ -32,7 +32,7 @@ const Brush2 = styled.div`
   width: 85px;
   height: 1px;
   border-bottom: 4px solid black;
-  left: 5px;
+  left: 14px;
   bottom: 17px;
 `;
 const ServiceBlock = styled.div`
