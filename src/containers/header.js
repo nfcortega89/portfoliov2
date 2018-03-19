@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { toggleNav, closeNav } from '../actions/header';
-import { bindActionCreators } from 'redux';
 import * as actions from '../actions/header';
 import headshot from '../assets/headshot.jpg';
+import logo from '../assets/NFCO_02.png';
 
 const strikethroughTop = keyframes`
   100% {
@@ -19,7 +18,7 @@ const strikethroughBottom = keyframes`
 `;
 const strikethroughLeft = keyframes`
   100% {
-    height: 215px;
+    height: 218px;
   }
 `;
 const Wrapper = styled.header`
@@ -47,7 +46,6 @@ const HeadContainer = styled.div`
   position: relative;
 `;
 const Head = styled.h1`
-  font-family: 'Nunito', sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
   font-size: 56px;
@@ -55,7 +53,6 @@ const Head = styled.h1`
   margin: 0.6em 0.7em 0;
 `;
 const SubHead = styled.p`
-  font-family: 'Nunito', sans-serif;
   color: white;
   -webkit-font-smoothing: antialiased;
   margin: 0 0.7em 0.6em;
@@ -106,23 +103,36 @@ const TopLine = styled.div`
 `;
 
 const Nav = styled.div`
+  margin: 1em 1em 0;
+  padding: 1em;
   z-index: 9
-  width: 50px;
+  width: 100%;
   height: 50px;
-  border-radius: 50%;
   background: transparent;
-  top: 50px;
-  right: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  position: absolute;
-
-  &:hover{
-  cursor: pointer;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
 `;
 
+const Hamburger = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 class Header extends Component {
   render() {
     return (
@@ -135,16 +145,18 @@ class Header extends Component {
           <TopLine />
         </HeadContainer>
         <Nav>
-          <svg
-            onClick={this.props.toggleNav}
-            fill="#ffffff"
-            height="36"
-            viewBox="0 0 24 24"
-            width="36"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-          </svg>
+          <Hamburger>
+            <svg
+              onClick={this.props.toggleNav}
+              fill="#ffffff"
+              height="36"
+              viewBox="0 0 24 24"
+              width="36"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+            </svg>
+          </Hamburger>
         </Nav>
       </Wrapper>
     );

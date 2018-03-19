@@ -14,7 +14,6 @@ const ServicesWrapper = styled.div`
   padding-left: 4em;
 `;
 const Title = styled.h2`
-  font-family: 'Nunito', sans-serif;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -51,16 +50,15 @@ const Row = styled.div`
 `;
 
 const ServiceCard = styled.div`
-  margin: 1em 2em;
+  margin: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  min-width: 230px;
+  min-width: 220px;
   min-height: 175px;
 `;
 const ServiceDescription = styled.p`
-  font-family: 'Nunito', sans-serif;
   text-transform: uppercase;
   color: black;
   -webkit-font-smoothing: antialiased;
@@ -68,7 +66,6 @@ const ServiceDescription = styled.p`
   font-weight: 600;
 `;
 const Info = styled.p`
-  font-family: 'Nunito', sans-serif;
   color: grey;
   -webkit-font-smoothing: antialiased;
   margin-top: 1.5em;

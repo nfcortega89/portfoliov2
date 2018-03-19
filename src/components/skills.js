@@ -41,7 +41,7 @@ const SkillName = styled.p`
   font-weight: 600;
   color: white;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Nunito', sans-serif;
+   
 `;
 const Percentage = styled.p`
   z-index: 9;
@@ -58,7 +58,7 @@ const Percentage = styled.p`
   letter-spacing: -1px;
   font-size: 13px;
   font-weight: 900;
-  font-family: 'Nunito', sans-serif;
+   
 `;
 const ProgressBar = styled.div`
   width: 100%;
