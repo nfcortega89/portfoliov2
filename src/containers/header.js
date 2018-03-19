@@ -32,6 +32,7 @@ const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 `;
 const HeadContainer = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const SubHead = styled.p`
   -webkit-font-smoothing: antialiased;
   margin: 0 0.7em 0.6em;
   font-size: 56px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 `;
 const LeftLine = styled.div`
@@ -99,6 +100,24 @@ const TopLine = styled.div`
   animation-direction: alternate;
 `;
 
+const Nav = styled.div`
+  z-index: 9
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  top: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  &:hover{
+  cursor: pointer;
+  }
+`;
+
 class Header extends Component {
   render() {
     return (
@@ -110,6 +129,17 @@ class Header extends Component {
           <BottomLine />
           <TopLine />
         </HeadContainer>
+        <Nav>
+          <svg
+            fill="#ffffff"
+            height="36"
+            viewBox="0 0 24 24"
+            width="36"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </Nav>
       </Wrapper>
     );
   }
