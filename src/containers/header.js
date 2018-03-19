@@ -4,21 +4,15 @@ import { withRouter } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import * as actions from '../actions/header';
 import headshot from '../assets/headshot.jpg';
-import logo from '../assets/NFCO_02.png';
 
-const strikethroughTop = keyframes`
+const HorizontalLine = props => keyframes`
   100% {
-    width: 800px;
+    width: ${props}
   }
 `;
-const strikethroughBottom = keyframes`
+const VerticalLine = props => keyframes`
   100% {
-    width: 390px;
-  }
-`;
-const strikethroughLeft = keyframes`
-  100% {
-    height: 218px;
+    height: ${props}
   }
 `;
 const Wrapper = styled.header`
@@ -66,7 +60,7 @@ const LeftLine = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  animation: ${strikethroughLeft} 1s infinite;
+  animation: ${props => VerticalLine(props.height)} 1s infinite;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-delay: 1.4s;
@@ -79,7 +73,7 @@ const BottomLine = styled.div`
   position: absolute;
   right: 390px;
   bottom: 0;
-  animation: ${strikethroughBottom} 1s infinite;
+  animation: ${props => HorizontalLine(props.width)} 1s infinite;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-delay: 0.5s;
@@ -94,7 +88,7 @@ const TopLine = styled.div`
   z-index: 9
   height: 2px;
   border-bottom: 5px solid white;
-  animation: ${strikethroughTop} 1s infinite;
+  animation: ${props => HorizontalLine(props.width)} 1s infinite;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-delay: 2.3s;
@@ -133,16 +127,39 @@ const Hamburger = styled.div`
     cursor: pointer;
   }
 `;
+
+const Dropdown = styled.div`
+  background: white;
+  width: 100%;
+  height: 110vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(${props => (props.open ? '0' : '-100%')});
+  transition: 1s all ease-in-out;
+`;
+
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      topline: '800px',
+      bottomline: '390px',
+      leftline: '218px'
+    };
+  }
   render() {
     return (
       <Wrapper>
         <HeadContainer>
           <Head>Hi I am Niccolo Ortega</Head>
           <SubHead>Designer & Developer</SubHead>
-          <LeftLine />
-          <BottomLine />
-          <TopLine />
+          <LeftLine height={this.state.leftline} />
+          <BottomLine width={this.state.bottomline} />
+          <TopLine width={this.state.topline} />
         </HeadContainer>
         <Nav>
           <Hamburger>
@@ -158,6 +175,9 @@ class Header extends Component {
             </svg>
           </Hamburger>
         </Nav>
+        <Dropdown onClick={this.props.closeNav} open={this.props.open}>
+          Hello
+        </Dropdown>
       </Wrapper>
     );
   }
