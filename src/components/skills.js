@@ -11,6 +11,7 @@ const loading = props => keyframes`
 `;
 
 const SkillsContainer = styled.ul`
+  z-index: -1;
   background: #3b3b44;
   box-sizing: border-box;
   margin: 0;
@@ -41,7 +42,6 @@ const SkillName = styled.p`
   font-weight: 600;
   color: white;
   -webkit-font-smoothing: antialiased;
-   
 `;
 const Percentage = styled.p`
   z-index: 9;

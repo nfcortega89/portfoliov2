@@ -14,6 +14,7 @@ const SSBlock = styled.section`
   align-items: center;
   margin: 0 auto;
 `;
+
 class app extends Component {
   render() {
     return (

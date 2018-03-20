@@ -129,10 +129,11 @@ const Hamburger = styled.div`
 `;
 
 const Dropdown = styled.div`
-  background: white;
+  z-index: 999;
+  background: black;
   width: 100%;
   height: 110vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
@@ -140,6 +141,13 @@ const Dropdown = styled.div`
   flex-direction: column;
   transform: translateY(${props => (props.open ? '0' : '-100%')});
   transition: 1s all ease-in-out;
+`;
+
+const ListItems = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 `;
 
 class Header extends Component {
@@ -176,7 +184,8 @@ class Header extends Component {
           </Hamburger>
         </Nav>
         <Dropdown onClick={this.props.closeNav} open={this.props.open}>
-          Hello
+          <ListItems>Resume</ListItems>
+          <ListItems>Email</ListItems>
         </Dropdown>
       </Wrapper>
     );

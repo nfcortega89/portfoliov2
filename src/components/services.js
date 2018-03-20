@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const ServicesWrapper = styled.div`
+  z-index: -1;
   background: #f3f3f3;
   position: relative;
   box-sizing: border-box;
