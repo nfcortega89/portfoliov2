@@ -31,6 +31,9 @@ const Wrapper = styled.header`
   align-items: center;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: 767px) {
+    background: black;
+  }
 `;
 const HeadContainer = styled.div`
   display: flex;

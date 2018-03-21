@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Services from './components/services';
 import Skills from './components/skills';
+import Contact from './components/contact';
 import Header from './containers/header';
 
 const App = styled.div`
   height: 100%;
   min-width: 1224px;
+  ${'' /* @media screen and (max-width: 767px) {
+    width: 100%;
+  } */};
 `;
 const SSBlock = styled.section`
   display: flex;
@@ -24,6 +28,7 @@ class app extends Component {
           <Services />
           <Skills />
         </SSBlock>
+        <Contact />
       </App>
     );
   }
