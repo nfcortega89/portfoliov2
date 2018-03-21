@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
 import * as actions from '../actions/header';
+import styled, { keyframes } from 'styled-components';
 import headshot from '../assets/headshot.jpg';
+import Drawing from './canvas';
 
 const HorizontalLine = props => keyframes`
   100% {
@@ -128,28 +128,6 @@ const Hamburger = styled.div`
   }
 `;
 
-const Dropdown = styled.div`
-  z-index: 999;
-  background: black;
-  width: 100%;
-  height: 110vh;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(${props => (props.open ? '0' : '-100%')});
-  transition: 1s all ease-in-out;
-`;
-
-const ListItems = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-`;
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -183,10 +161,7 @@ class Header extends Component {
             </svg>
           </Hamburger>
         </Nav>
-        <Dropdown onClick={this.props.closeNav} open={this.props.open}>
-          <ListItems>Resume</ListItems>
-          <ListItems>Email</ListItems>
-        </Dropdown>
+        <Drawing />
       </Wrapper>
     );
   }
@@ -196,4 +171,4 @@ const mapStateToProps = ({ header }) => ({
   open: header.open
 });
 
-export default withRouter(connect(mapStateToProps, actions)(Header));
+export default connect(mapStateToProps, actions)(Header);
