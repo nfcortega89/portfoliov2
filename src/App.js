@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import Services from './components/services';
 import Skills from './components/skills';
 import Contact from './components/contact';
+import Testing from './components/testing';
 import Header from './containers/header';
 
 const App = styled.div`
   height: 100%;
-  min-width: 1224px;
-  ${'' /* @media screen and (max-width: 767px) {
-    width: 100%;
-  } */};
+  width: 100%;
 `;
 const SSBlock = styled.section`
   display: flex;
@@ -23,12 +21,13 @@ class app extends Component {
   render() {
     return (
       <App>
-        <Header />
-        <SSBlock>
-          <Services />
-          <Skills />
-        </SSBlock>
-        <Contact />
+        <Testing />
+        {/* <Header /> */}
+        {/* <SSBlock> */}
+        {/* <Services /> */}
+        {/* <Skills /> */}
+        {/* </SSBlock> */}
+        {/* <Contact /> */}
       </App>
     );
   }

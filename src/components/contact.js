@@ -12,16 +12,16 @@ const Wrapper = styled.form`
   flex-direction: column;
 `;
 const Input = styled.input`
-  width: 500px;
-  height: 30px};
+  width: 60%;
+  height: 10%;
 `;
 
 const SendButton = styled.button`
-  width: 50px;
+  width: 50%;
 `;
 const TextArea = styled.textarea`
-  width: 500px;
-  height: 200px;
+  width: 60%;
+  height: 50%;
 `;
 
 class ContactForm extends Component {
