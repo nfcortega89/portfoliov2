@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Services from './components/services';
 import Skills from './components/skills';
 import Contact from './components/contact';
-import Testing from './components/testing';
 import Header from './containers/header';
 
 const App = styled.div`
@@ -21,12 +20,9 @@ class app extends Component {
   render() {
     return (
       <App>
-        <Testing />
-        {/* <Header /> */}
-        {/* <SSBlock> */}
-        {/* <Services /> */}
-        {/* <Skills /> */}
-        {/* </SSBlock> */}
+        <Header />
+        <SSBlock>{/* <Services />
+          <Skills /> */}</SSBlock>
         {/* <Contact /> */}
       </App>
     );

@@ -32,7 +32,7 @@ const Wrapper = styled.header`
   flex-direction: column;
   position: relative;
   @media screen and (max-width: 767px) {
-    background: black;
+    height: 60vh;
   }
 `;
 const HeadContainer = styled.div`
@@ -41,6 +41,10 @@ const HeadContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  width: 780px;
+  @media screen and (max-width: 767px) {
+    width: 370px;
+  }
 `;
 const Head = styled.h1`
   color: white;
@@ -48,6 +52,13 @@ const Head = styled.h1`
   font-size: 56px;
   text-transform: uppercase;
   margin: 0.6em 0.7em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    font-size: 26px;
+  }
 `;
 const SubHead = styled.p`
   color: white;
@@ -56,8 +67,16 @@ const SubHead = styled.p`
   font-size: 56px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    font-size: 24px;
+  }
 `;
 const LeftLine = styled.div`
+  display: block;
   height: 0;
   border-left: 5px solid white;
   position: absolute;
@@ -69,8 +88,12 @@ const LeftLine = styled.div`
   animation-delay: 1.4s;
   animation-timing-function: ease-in-out;
   animation-direction: normal;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 const BottomLine = styled.div`
+  display: block;
   width: 0px;
   border-bottom: 5px solid white;
   position: absolute;
@@ -82,8 +105,12 @@ const BottomLine = styled.div`
   animation-delay: 0.5s;
   animation-timing-function: ease-in-out;
   animation-direction: normal;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 const TopLine = styled.div`
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -97,6 +124,9 @@ const TopLine = styled.div`
   animation-delay: 2.3s;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
+  @media screen and (max-width: 767px){
+    display: none;
+  }
 `;
 
 const Nav = styled.div`
