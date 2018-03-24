@@ -24,6 +24,8 @@ const SkillsContainer = styled.ul`
   min-height: 545px;
   @media screen and (max-width: 767px) {
     width: 100%;
+    padding: 0 1.5em;
+    height: 70vh;
   }
 `;
 const Row = styled.li`
@@ -45,6 +47,9 @@ const SkillName = styled.p`
   font-weight: 600;
   color: white;
   -webkit-font-smoothing: antialiased;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 const Percentage = styled.p`
   z-index: 9;
@@ -61,7 +66,10 @@ const Percentage = styled.p`
   letter-spacing: -1px;
   font-size: 13px;
   font-weight: 900;
-
+  @media and screen (max-width:767px){
+    top: -4px;
+    right: 3px;
+  }
 `;
 const ProgressBar = styled.div`
   width: 100%;
