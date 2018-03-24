@@ -22,6 +22,13 @@ const Title = styled.h2`
   position: relative;
   margin-left: 0.8em;
   padding: 1em;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
 `;
 const Brush1 = styled.div`
   position: absolute;
@@ -30,6 +37,11 @@ const Brush1 = styled.div`
   border-bottom: 4px solid black;
   right: 18px;
   top: 17px;
+  @media screen and (max-width: 767px) {
+    right: 103px;
+    width: 55px;
+    border-bottom: 2px solid black;
+  }
 `;
 const Brush2 = styled.div`
   position: absolute;
@@ -38,6 +50,11 @@ const Brush2 = styled.div`
   border-bottom: 4px solid black;
   left: 14px;
   bottom: 17px;
+  @media screen and (max-width: 767px) {
+    border-bottom: 2px solid black;
+    width: 55px;
+    left: 103px;
+  }
 `;
 const ServiceBlock = styled.div`
   display: flex;
@@ -46,6 +63,9 @@ const ServiceBlock = styled.div`
   flex-direction: column;
   width: 100%;
   padding-left: 2em;
+  @media screen and (max-width: 767px) {
+    padding: 0;
+  }
 `;
 const Row = styled.ul`
   display: flex;
@@ -62,8 +82,14 @@ const ServiceCard = styled.li`
   justify-content: center;
   align-items: flex-start;
   width: 33.33%;
-  height: 30vh;
+  height: 21vh;
   width: 17vw;
+  @media screen and (max-width: 767px) {
+    width: 33.33%;
+    height: 23vh;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const ServiceDescription = styled.p`
   text-transform: uppercase;
@@ -71,6 +97,9 @@ const ServiceDescription = styled.p`
   -webkit-font-smoothing: antialiased;
   margin: 0.5em 0;
   font-weight: 600;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 const Info = styled.p`
   color: grey;
@@ -78,8 +107,21 @@ const Info = styled.p`
   margin: 0.5em 0;
   font-size: 14px;
   padding: 0 0.5em 0 0;
+  @media screen and (max-width: 767px) {
+    font-size: 12.5px;
+    text-align: center;
+    width: 125px;
+  }
 `;
 
+const Icon = styled.div`
+  height: 36px;
+  width: 36px;
+  @media screen and (max-width: 767px) {
+    height: 24px;
+    width: 24px;
+  }
+`;
 class Service extends Component {
   constructor(props) {
     super(props);
@@ -103,12 +145,11 @@ class Service extends Component {
         },
         {
           name: 'Intuitive',
-          info: 'Strong preference for easy to use UX/UI.'
+          info: 'Easy interface. Strong preference for easy to use UX/UI.'
         },
         {
           name: 'Dynamic',
-          info:
-            'Websites dont have to be static, I love making pages come to life.'
+          info: 'Websites dont have to be static, why not give it some life.'
         }
       ]
     };
@@ -122,15 +163,15 @@ class Service extends Component {
           {row1.map((service, index) => {
             return (
               <ServiceCard key={index}>
-                <svg
-                  fill="#000000"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  width="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                  <path d="M0 0h24v24H0z" fill="none" />
-                </svg>
+                <Icon>
+                  <svg
+                    fill="#000000"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                  </svg>
+                </Icon>
                 <ServiceDescription>{service.name}</ServiceDescription>
                 <Info>{service.info}</Info>
               </ServiceCard>
@@ -141,15 +182,15 @@ class Service extends Component {
           {row2.map((service, index) => {
             return (
               <ServiceCard key={index}>
-                <svg
-                  fill="#000000"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  width="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
-                  <path d="M0 0h24v24H0z" fill="none" />
-                </svg>
+                <Icon>
+                  <svg
+                    fill="#000000"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                  </svg>
+                </Icon>
                 <ServiceDescription>{service.name}</ServiceDescription>
                 <Info>{service.info}</Info>
               </ServiceCard>
