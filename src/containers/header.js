@@ -32,7 +32,9 @@ const Wrapper = styled.header`
   flex-direction: column;
   position: relative;
   @media screen and (max-width: 767px) {
-    height: 60vh;
+    height: 51vh;
+    background-size: contain;
+    background-position: 0px 0px;
   }
 `;
 const HeadContainer = styled.div`
@@ -55,6 +57,7 @@ const Head = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   @media screen and (max-width: 767px) {
     margin: 0 auto;
     font-size: 26px;
@@ -70,6 +73,7 @@ const SubHead = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   @media screen and (max-width: 767px) {
     margin: 0 auto;
     font-size: 24px;

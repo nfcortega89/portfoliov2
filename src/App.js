@@ -14,6 +14,9 @@ const SSBlock = styled.section`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 class app extends Component {
@@ -21,8 +24,10 @@ class app extends Component {
     return (
       <App>
         <Header />
-        <SSBlock>{/* <Services />
-          <Skills /> */}</SSBlock>
+        <SSBlock>
+          <Services />
+          <Skills />
+        </SSBlock>
         {/* <Contact /> */}
       </App>
     );

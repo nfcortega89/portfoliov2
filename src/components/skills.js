@@ -20,8 +20,11 @@ const SkillsContainer = styled.ul`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 50%;
   min-height: 545px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 const Row = styled.li`
   margin: 12px;
@@ -58,7 +61,7 @@ const Percentage = styled.p`
   letter-spacing: -1px;
   font-size: 13px;
   font-weight: 900;
-   
+
 `;
 const ProgressBar = styled.div`
   width: 100%;

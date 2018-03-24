@@ -6,13 +6,15 @@ const ServicesWrapper = styled.div`
   background: #f3f3f3;
   position: relative;
   box-sizing: border-box;
-  width: 100%;
+  width: 50%;
   min-height: 545px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 4em;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 const Title = styled.h2`
   text-transform: uppercase;
@@ -43,33 +45,39 @@ const ServiceBlock = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding-left: 2em;
 `;
-const Row = styled.div`
+const Row = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 0;
 `;
 
-const ServiceCard = styled.div`
+const ServiceCard = styled.li`
   margin: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  min-width: 220px;
-  min-height: 175px;
+  width: 33.33%;
+  height: 30vh;
+  width: 17vw;
 `;
 const ServiceDescription = styled.p`
   text-transform: uppercase;
   color: black;
   -webkit-font-smoothing: antialiased;
-  margin-top: 0.5em;
+  margin: 0.5em 0;
   font-weight: 600;
 `;
 const Info = styled.p`
   color: grey;
   -webkit-font-smoothing: antialiased;
-  margin-top: 1.5em;
+  margin: 0.5em 0;
+  font-size: 14px;
+  padding: 0 0.5em 0 0;
 `;
 
 class Service extends Component {
