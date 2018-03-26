@@ -24,6 +24,9 @@ const Drawing = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const ListItems = styled.p`
