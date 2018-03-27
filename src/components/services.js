@@ -34,7 +34,7 @@ const Brush1 = styled.div`
   position: absolute;
   width: 80px;
   height: 1px;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid grey;
   right: 18px;
   top: 17px;
   @media screen and (max-width: 767px) {
@@ -47,7 +47,7 @@ const Brush2 = styled.div`
   position: absolute;
   width: 85px;
   height: 1px;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid grey;
   left: 14px;
   bottom: 17px;
   @media screen and (max-width: 767px) {
@@ -204,7 +204,8 @@ class Service extends Component {
     return (
       <ServicesWrapper>
         <Title>
-          <Brush1 />My skills & services
+          My skills & services
+          <Brush1 />
           <Brush2 />
         </Title>
         {this.renderServices()}
