@@ -28,7 +28,7 @@ class app extends Component {
           <Services />
           <Skills />
         </SSBlock>
-        {/* <Contact /> */}
+        <Contact />
       </App>
     );
   }
