@@ -122,6 +122,7 @@ const Icon = styled.div`
     width: 24px;
   }
 `;
+
 class Service extends Component {
   constructor(props) {
     super(props);

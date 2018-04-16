@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Services from './components/services';
 import Skills from './components/skills';
 import Contact from './components/contact';
+import About from './components/about';
 import Header from './containers/header';
 
 const App = styled.div`
@@ -24,11 +25,12 @@ class app extends Component {
     return (
       <App>
         <Header />
+        <About />
         <SSBlock>
           <Services />
           <Skills />
         </SSBlock>
-        <Contact />
+        {/* <Contact /> */}
       </App>
     );
   }
