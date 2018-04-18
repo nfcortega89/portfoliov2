@@ -27,6 +27,13 @@ const Brush1 = styled.div`
   border: 2px solid grey;
   width: 74px;
 `;
+const Brush2 = styled.div`
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+  border: 2px solid grey;
+  width: 74px;
+`;
 const AboutBlock = styled.div`
   width: 100%;
   height: 100%;
@@ -63,6 +70,7 @@ const About = () => {
       <AboutH2>
         About me
         <Brush1 />
+        <Brush2 />
       </AboutH2>
       <AboutBlock>
         <PictureCol>

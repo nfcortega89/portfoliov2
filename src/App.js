@@ -4,6 +4,7 @@ import Services from './components/services';
 import Skills from './components/skills';
 import Contact from './components/contact';
 import About from './components/about';
+import Footer from './components/footer';
 import Header from './containers/header';
 
 const App = styled.div`
@@ -31,6 +32,7 @@ class app extends Component {
           <Skills />
         </SSBlock>
         {/* <Contact /> */}
+        <Footer />
       </App>
     );
   }
