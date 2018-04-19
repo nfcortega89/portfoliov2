@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  height: 35vh;
+  height: 25vh;
   width: 100%;
   background-color: #212121;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 `;
 const Legal = styled.p`
+  -webkit-font-smoothing: antialiased;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
@@ -19,8 +20,10 @@ const SocialLinks = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Links = styled.div`
-  color: white;
+const Links = styled.a`
+  text-decoration: none;
+  background: #e4e4e4;
+  color: #5e5e5e;
   margin: 0 0.5em
   padding: 10px;
   width: 50px;
@@ -30,23 +33,31 @@ const Links = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid white;
+
+  &:first-child {
+    background: transparent;
+    color: #e4e4e4;
+  }
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const Footer = () => {
   return (
     <Wrapper>
-      <Legal>All rights reserved Nikko Ortega </Legal>
+      <Legal>All rights reserved Niccolo Ortega </Legal>
       <SocialLinks>
-        <Links>
+        <Links href="https://www.facebook.com/NikkosWacko">
           <i className="fa fa-facebook" aria-hidden="true" />
         </Links>
-        <Links>
-          <i className="fa fa-google-plus" aria-hidden="true" />
+        <Links href="mailto:nfcortega89@gmail.com">
+          <i className="fa fa-google" aria-hidden="true" />
         </Links>
-        <Links>
+        <Links href="https://www.pinterest.com/niccoloortega/">
           <i className="fa fa-pinterest-p" aria-hidden="true" />
         </Links>
-        <Links>
+        <Links href="https://www.instagram.com/nikkotoonaughty/">
           <i className="fa fa-instagram" aria-hidden="true" />
         </Links>
       </SocialLinks>
