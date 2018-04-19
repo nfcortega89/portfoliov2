@@ -15,6 +15,7 @@ const TestimonialBlock = styled.div`
   background: #282828;
   padding: 2em 2em 2em 7em;
   position: relative;
+  z-index: -1;
 `;
 const TestimonialRight = styled.div`
   width: 50%;

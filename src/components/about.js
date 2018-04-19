@@ -11,6 +11,8 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   padding: 4em;
+  background: #f7f7f7;
+  z-index: 9;
 `;
 const AboutH2 = styled.h2`
   -webkit-font-smoothing: antialiased;
@@ -26,14 +28,14 @@ const Brush1 = styled.div`
   position: absolute;
   top: -4px;
   right: -3px;
-  border: 2px solid grey;
+  border: 2px solid #cacaca;
   width: 74px;
 `;
 const Brush2 = styled.div`
   position: absolute;
   bottom: -4px;
   left: -3px;
-  border: 2px solid grey;
+  border: 2px solid #cacaca;
   width: 74px;
 `;
 const AboutBlock = styled.div`
@@ -56,7 +58,7 @@ const Image = styled.div`
   background-position: ${props => props.position}
   background-repeat: no-repeat;
   width: 300px;
-  height: 430px;
+  height: 460px;
   margin: 0 0.5em;
 `;
 const BioCol = styled.div`
@@ -80,7 +82,7 @@ const About = () => {
       <AboutBlock>
         <PictureCol>
           <Image src={desk} size="290% 110%;" />
-          <Image src={aboutpic} size="138% 110%;" position="60% 70%" />
+          <Image src={aboutpic} size="138% 130%;" position="60% 70%" />
         </PictureCol>
         <BioCol>
           <BioP>

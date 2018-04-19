@@ -16,6 +16,7 @@ const VerticalLine = props => keyframes`
   }
 `;
 const Wrapper = styled.header`
+  z-index: 999;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(${headshot});
   box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.8);
