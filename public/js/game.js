@@ -22,8 +22,8 @@ $(document).ready(function() {
     var apple;
     var score;
     var timeout;
-    JS_SNAKE.width = 600;
-    JS_SNAKE.height = 400;
+    JS_SNAKE.width = 250;
+    JS_SNAKE.height = 250;
     JS_SNAKE.blockSize = 10;
     JS_SNAKE.widthInBlocks = JS_SNAKE.width / JS_SNAKE.blockSize;
     JS_SNAKE.heightInBlocks = JS_SNAKE.height / JS_SNAKE.blockSize;

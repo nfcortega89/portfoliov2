@@ -45,7 +45,7 @@ const Links = styled.a`
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper className="Footer">
       <Legal>All rights reserved Niccolo Ortega </Legal>
       <SocialLinks>
         <Links href="https://www.facebook.com/NikkosWacko">

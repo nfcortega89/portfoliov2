@@ -51,7 +51,7 @@ const Brush = styled.hr`
 `;
 const Portfolio = () => {
   return (
-    <Wrapper>
+    <Wrapper className="Portfolio">
       <PortfolioH2>
         Portfolio
         <Brush width="75px" top="-15px" right="-6px" />

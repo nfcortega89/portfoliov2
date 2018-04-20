@@ -73,7 +73,7 @@ const BioP = styled.p`
 `;
 const About = () => {
   return (
-    <Wrapper>
+    <Wrapper className="About">
       <AboutH2>
         About me
         <Brush1 />
@@ -82,7 +82,7 @@ const About = () => {
       <AboutBlock>
         <PictureCol>
           <Image src={desk} size="290% 110%;" />
-          <Image src={aboutpic} size="138% 130%;" position="60% 70%" />
+          <Image src={aboutpic} size="138% 120%;" position="60% 70%" />
         </PictureCol>
         <BioCol>
           <BioP>

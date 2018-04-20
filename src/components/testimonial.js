@@ -70,7 +70,7 @@ const Decoration = styled.p`
 `;
 const Testimonial = () => {
   return (
-    <Wrapper>
+    <Wrapper className="Testimonial">
       <TestimonialBlock>
         <TestimonialH2>
           Testimonials
@@ -82,7 +82,7 @@ const Testimonial = () => {
           mentor, he has been an absolute pleasure to work with as he constantly
           strives to achieve his goals creatively while using best practices.
           His ability to work through difficult problems is impressive and never
-          gives up. I highly recommend Nikko as a full-stack developer!
+          gives up. I highly recommend Nikko as a frontend developer!
         </TestimonialP>
         <Name>Arthur Longbottom</Name>
         <Title>

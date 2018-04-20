@@ -18,8 +18,8 @@ const Wrapper = styled.div`
   flex-direction: column-reverse;
 `;
 const Drawing = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,10 @@ const Drawing = styled.div`
   }
 `;
 
-const ListItems = styled.p`
+const Link = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +44,10 @@ class Canvas extends Component {
     return (
       <Wrapper onClick={this.props.closeNav} open={this.props.open}>
         <Drawing id="drawing" />
-        <ListItems>Resume</ListItems>
-        <ListItems>Email</ListItems>
+        <Link>
+          <i className="fa fa-github-alt fa-3x" aria-hidden="true" />
+        </Link>
+        <Link>Email</Link>
       </Wrapper>
     );
   }
