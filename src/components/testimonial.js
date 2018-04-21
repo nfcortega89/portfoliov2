@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import one from '../assets/arthur.png';
+import two from '../assets/2.png';
+import three from '../assets/3.png';
+import four from '../assets/4.png';
+import five from '../assets/5.png';
+import six from '../assets/6.png';
+import seven from '../assets/7.png';
+import eight from '../assets/8.png';
 
 const Wrapper = styled.section`
   display: flex;
@@ -16,9 +24,8 @@ const TestimonialBlock = styled.div`
   padding: 2em 2em 2em 7em;
   position: relative;
   z-index: -1;
-`;
-const TestimonialRight = styled.div`
-  width: 50%;
+  min-height: 418.81px;
+  max-height: 418.81px;
 `;
 const TestimonialH2 = styled.h2`
   width: 100%;
@@ -68,31 +75,91 @@ const Decoration = styled.p`
   letter-spacing: -30px;
   font-family: 'Secular One', sans-serif;
 `;
-const Testimonial = () => {
-  return (
-    <Wrapper className="Testimonial">
-      <TestimonialBlock>
-        <TestimonialH2>
-          Testimonials
-          <Brush width="83px" bottom="-17px" left="1px" />
-          <Brush width="80px" top="-16px" right="383px" />
-        </TestimonialH2>
-        <TestimonialP>
-          Nikko is an ambitious, driven and excellent problem solver. As his
-          mentor, he has been an absolute pleasure to work with as he constantly
-          strives to achieve his goals creatively while using best practices.
-          His ability to work through difficult problems is impressive and never
-          gives up. I highly recommend Nikko as a frontend developer!
-        </TestimonialP>
-        <Name>Arthur Longbottom</Name>
-        <Title>
-          Sr. React / React Native Developer at Omni Holding Company
-        </Title>
-        <Decoration>''</Decoration>
-      </TestimonialBlock>
-      <TestimonialRight />
-    </Wrapper>
-  );
-};
+const TestimonialRight = styled.div`
+  width: 50%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 418.81px;
+  max-height: 418.81px;
+  overflow: hidden;
+`;
+const PictureRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 33.33%;
+  width: 100%;
+  margin: 0.3em 0;
+  &:first-of-type {
+    margin: 0 0 0.3em 0;
+  }
+  &:last-of-type {
+    margin: 0;
+  }
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+`;
+const Picture = styled.div`
+  filter: grayscale(1);
+  margin: 0 0.15em;
+  background-image: url(${props => props.bg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100px;
+  height: 100px;
+  opacity: 0.1;
+`;
+
+class Testimonial extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      images: [one, two, three, four, five, six, seven, eight]
+    };
+    this.renderList = this.renderList.bind(this);
+  }
+  renderList() {
+    return this.state.images.map((image, index) => {
+      return <Picture key={index} bg={image} />;
+    });
+  }
+  render() {
+    return (
+      <Wrapper className="Testimonial">
+        <TestimonialBlock>
+          <TestimonialH2>
+            Testimonials
+            <Brush width="83px" bottom="-17px" left="1px" />
+            <Brush width="80px" top="-16px" right="383px" />
+          </TestimonialH2>
+          <TestimonialP>
+            Nikko is an ambitious, driven and excellent problem solver. As his
+            mentor, he has been an absolute pleasure to work with as he
+            constantly strives to achieve his goals creatively while using best
+            practices. His ability to work through difficult problems is
+            impressive and never gives up. I highly recommend Nikko as a
+            frontend developer!
+          </TestimonialP>
+          <Name>Arthur Longbottom</Name>
+          <Title>
+            Sr. React / React Native Developer at Omni Holding Company
+          </Title>
+          <Decoration>''</Decoration>
+        </TestimonialBlock>
+        <TestimonialRight>
+          <PictureRow>{this.renderList()}</PictureRow>
+          <PictureRow>{this.renderList()}</PictureRow>
+          <PictureRow>{this.renderList()}</PictureRow>
+          <PictureRow>{this.renderList()}</PictureRow>
+        </TestimonialRight>
+      </Wrapper>
+    );
+  }
+}
 
 export default Testimonial;

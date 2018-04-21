@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import airtime from '../assets/Airtime2.png';
+import trendr from '../assets/Trendr2.png';
+import yummly from '../assets/Yummly2.png';
+import Info from './info';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -32,13 +36,19 @@ const PortfolioCol = styled.div`
   flex-direction: column;
 `;
 const PortfolioItem = styled.div`
-margin: 0.5em 0.5em;
-display: flex;
-justify-content: center;
-align-items: center;
-height: ${props => props.height}
-width: ${props => props.width}
-background: ${props => props.bg}
+  background-image: url(${props => props.bg});
+  margin: 0.5em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: ${props => props.height};
+  width: ${props => props.width};
+  opacity: 0.5;
+  transition: 0.3s all ease-in;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 `;
 const Brush = styled.hr`
   width: ${props => props.width}
@@ -59,14 +69,14 @@ const Portfolio = () => {
       </PortfolioH2>
       <PortfolioList>
         <PortfolioCol>
-          <PortfolioItem height="516px" width="300px" bg="blue" />
+          <PortfolioItem bg={airtime} height="516px" width="300px" />
         </PortfolioCol>
         <PortfolioCol>
-          <PortfolioItem height="250px" width="300px" bg="red" />
-          <PortfolioItem height="250px" width="300px" bg="yellow" />
+          <PortfolioItem bg={yummly} height="250px" width="300px" />
+          <PortfolioItem height="250px" width="300px" />
         </PortfolioCol>
         <PortfolioCol>
-          <PortfolioItem height="516px" width="300px" bg="purple" />
+          <PortfolioItem bg={trendr} height="516px" width="300px" />
         </PortfolioCol>
       </PortfolioList>
     </Wrapper>

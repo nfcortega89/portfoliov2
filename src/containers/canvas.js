@@ -47,7 +47,7 @@ class Canvas extends Component {
         <Link>
           <i className="fa fa-github-alt fa-3x" aria-hidden="true" />
         </Link>
-        <Link>Email</Link>
+        <Link>Resume</Link>
       </Wrapper>
     );
   }
