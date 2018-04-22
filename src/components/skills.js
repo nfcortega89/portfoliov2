@@ -23,9 +23,7 @@ const SkillsContainer = styled.ul`
   width: 50%;
   min-height: 545px;
   @media screen and (max-width: 767px) {
-    width: 100%;
-    padding: 0 1.5em;
-    height: 70vh;
+    display: none;
   }
 `;
 const Row = styled.li`

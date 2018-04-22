@@ -13,6 +13,9 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 const TestimonialBlock = styled.div`
   display: flex;
@@ -26,6 +29,11 @@ const TestimonialBlock = styled.div`
   z-index: -1;
   min-height: 418.81px;
   max-height: 418.81px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 0 0 0 1em;
+    height: 100%;
+  }
 `;
 const TestimonialH2 = styled.h2`
   width: 100%;
@@ -34,6 +42,9 @@ const TestimonialH2 = styled.h2`
   -webkit-font-smoothing: antialiased;
   font-size: 1.5em;
   position: relative;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2em;
+  }
 `;
 const Brush = styled.hr`
   width: ${props => props.width}
@@ -50,6 +61,10 @@ const TestimonialP = styled.p`
   -webkit-font-smoothing: antialiased;
   width: 100%;
   margin: 2em 0;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    line-height: 23px;
+  }
 `;
 const Name = styled.p`
   color: white;
@@ -58,12 +73,19 @@ const Name = styled.p`
   font-weight: 800;
   text-transform: uppercase;
   font-size: 17px;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    margin: 1em 0;
+  }
 `;
 const Title = styled.p`
   color: white;
   width: 100%;
   -webkit-font-smoothing: antialiased;
   margin: 0;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 `;
 const Decoration = styled.p`
   position: absolute;
@@ -74,6 +96,11 @@ const Decoration = styled.p`
   color: #404040;
   letter-spacing: -30px;
   font-family: 'Secular One', sans-serif;
+  @media screen and (max-width: 767px) {
+    font-size: 250px;
+    top: -82px;
+    right: 13px;
+  }
 `;
 const TestimonialRight = styled.div`
   width: 50%;
@@ -85,6 +112,10 @@ const TestimonialRight = styled.div`
   min-height: 418.81px;
   max-height: 418.81px;
   overflow: hidden;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    display: none;
+  }
 `;
 const PictureRow = styled.div`
   display: flex;

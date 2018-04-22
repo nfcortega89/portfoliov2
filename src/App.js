@@ -6,7 +6,7 @@ import Contact from './components/contact';
 import About from './components/about';
 import Footer from './components/footer';
 import Testimonial from './components/testimonial';
-import Portfolio from './components/portfolio';
+import Portfolio from './containers/portfolio';
 import Header from './containers/header';
 
 const App = styled.div`
@@ -33,9 +33,9 @@ class app extends Component {
           <Services />
           <Skills />
         </SSBlock>
-        <Portfolio />
+        {/* <Portfolio /> */}
         <Testimonial />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </App>
     );

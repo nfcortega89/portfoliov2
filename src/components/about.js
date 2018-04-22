@@ -13,6 +13,9 @@ const Wrapper = styled.section`
   padding: 4em;
   background: #f7f7f7;
   z-index: 9;
+  @media screen and (max-width: 767px) {
+    padding: 1em;
+  }
 `;
 const AboutH2 = styled.h2`
   -webkit-font-smoothing: antialiased;
@@ -44,6 +47,9 @@ const AboutBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 const PictureCol = styled.div`
   display: flex;
@@ -51,6 +57,9 @@ const PictureCol = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 const Image = styled.div`
   background-image: url(${props => props.src});
@@ -60,16 +69,29 @@ const Image = styled.div`
   width: 300px;
   height: 460px;
   margin: 0 0.5em;
+  @media  screen and (max-width:767px) {
+  width: 200px;
+  height: 200px;
+  }
 `;
 const BioCol = styled.div`
   width: 50%;
   height: 100%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 const BioP = styled.p`
   width: 100%;
   line-height: 33px;
   margin: 1em 0;
   padding: 0 2em;
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    padding: 1em;
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 const About = () => {
   return (

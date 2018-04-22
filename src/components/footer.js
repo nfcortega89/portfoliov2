@@ -1,19 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   height: 25vh;
   width: 100%;
   background-color: #212121;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 const Legal = styled.p`
   -webkit-font-smoothing: antialiased;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
+  @media screen and (max-width: 767px) {
+    font-size: 10px;
+  }
 `;
 const SocialLinks = styled.div`
   display: flex;
@@ -40,6 +47,11 @@ const Links = styled.a`
   }
   &:hover{
     cursor: pointer;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 10px;
+    width: 35px;
+    height: 35px;
   }
 `;
 
