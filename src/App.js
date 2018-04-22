@@ -33,7 +33,7 @@ class app extends Component {
           <Services />
           <Skills />
         </SSBlock>
-        {/* <Portfolio /> */}
+        <Portfolio />
         <Testimonial />
         {/* <Contact /> */}
         <Footer />
