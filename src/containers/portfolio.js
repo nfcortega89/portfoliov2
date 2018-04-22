@@ -56,11 +56,10 @@ const PicBig = styled.div`
   z-index: 1;
   &:hover {
     cursor: pointer;
-    opacity: 1;
   }
   @media screen and (max-width: 767px) {
     width: 365px;
-    height: 120px;
+    height: 200px;
   }
 `;
 const PicSmall = styled.div`
@@ -81,7 +80,7 @@ const PicSmall = styled.div`
   }
   @media screen and (max-width:767px){
     width: 365px;
-    height: 120px;
+    height: 200px;
   }
 `;
 const Brush = styled.hr`
@@ -105,32 +104,71 @@ const Info = styled.div`
   color: white;
   line-height: 25px;
   padding: 0 1em;
+  @media screen and (max-width: 767px) {
+    padding: 0.5em;
+  }
 `;
 const Title = styled.h3`
   -webkit-font-smoothing: antialiased;
   text-transform: capitalize;
-  font-size: ${props => props.size}
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2em;
+  }
+`;
+const TitleSmall = styled.h3`
+  -webkit-font-smoothing: antialiased;
+  text-transform: capitalize;
+  font-size: 1.2em;
   font-weight: 600;
   margin: 0;
 `;
 const ProjectInfo = styled.p`
   -webkit-font-smoothing: antialiased;
-  font-size: ${props => props.size};
-  line-height: ${props => props.height};
+  font-size: 1em;
+  line-height: 1em;
+  @media screen and (max-width: 767px) {
+    font-size: 0.9em;
+    margin: 0.5em 0;
+  }
+`;
+const ProjectInfoSmall = styled.p`
+  -webkit-font-smoothing: antialiased;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+  line-height: 1em;
 `;
 const Stacks = styled.p`
   -webkit-font-smoothing: antialiased;
-  font-size: ${props => props.size}
+  font-size: 0.9em;
+  margin: 0;
+`;
+const StacksSmall = styled.p`
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.8em;
   margin: 0;
 `;
 const Url = styled.a`
-  font-size: ${props => props.size}
+  font-size: 0.8em;
   -webkit-font-smoothing: antialiased;
   text-transform: capitalize;
   color: white;
   text-decoration: underline;
   text-decoration-color: white;
   margin: 0.5em;
+`;
+const UrlSmall = styled.a`
+  -webkit-font-smoothing: antialiased;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-size: 0.8em;
+  margin: 0;
+  @media screen and (max-width: 767px) {
+  }
 `;
 class Portfolio extends Component {
   constructor(props) {
@@ -150,14 +188,14 @@ class Portfolio extends Component {
         {
           title: "Who's Hungry",
           info:
-            "Who's Hungry is a food app designed to promote healthy eating. For those who are tired of eating the same bland food, it's time to spice things up and concoct delicious yet healthy meals. Powered by Yummly",
+            "Who's Hungry is a food app designed to promote healthy eating. For those who are tired of eating the same bland food, it's time to spice things up and concoct delicious yet healthy meals.",
           stack: 'JQuery, Express, Unirest, Node, Nodemon',
           url: 'https://limitless-mountain-11507.herokuapp.com/'
         },
         {
           title: 'Trendr',
           info:
-            'Trendr is a gallery page that showcases trending images from carefully curated photos. Images are organized into categories where viewers can vote on them. The photo with the most up votes is displayed on the home page, and automatically changes based on the trending pictures.',
+            'Trendr is a gallery page that showcases trending images from carefully curated photos. Images are organized into categories where viewers can vote on them and the photo with the most up votes is displayed on the home page',
           stack:
             'Stack: React, Express , Node, Mongodb, Mongoose, Firebase Auth, Nodemon',
           url: 'https://trendr-3eddc.firebaseapp.com'
@@ -197,16 +235,10 @@ class Portfolio extends Component {
               <Info
                 onClick={this.showAirtime}
                 open={this.state.airtimeIsShowing}>
-                <Title size="1.5em">{this.state.projects[0].title}</Title>
-                <ProjectInfo height="23px" size="18px">
-                  {this.state.projects[0].info}
-                </ProjectInfo>
-                <Stacks size="18px">
-                  Stack: {this.state.projects[0].stack}
-                </Stacks>
-                <Url
-                  size="18px"
-                  href="https://advocate-bear-76680.netlify.com/">
+                <Title>{this.state.projects[0].title}</Title>
+                <ProjectInfo>{this.state.projects[0].info}</ProjectInfo>
+                <Stacks>Stack: {this.state.projects[0].stack}</Stacks>
+                <Url href="https://advocate-bear-76680.netlify.com/">
                   https://advocate-bear-76680.netlify.com/
                 </Url>
               </Info>
@@ -217,18 +249,14 @@ class Portfolio extends Component {
               <Info
                 onClick={this.showWhosHungry}
                 open={this.state.whosHungryIsShowing}>
-                <Title size="18px">{this.state.projects[1].title}</Title>
-                <ProjectInfo height="16px" size="14px">
+                <TitleSmall>{this.state.projects[1].title}</TitleSmall>
+                <ProjectInfoSmall>
                   {this.state.projects[1].info}
-                </ProjectInfo>
-                <Stacks size="14px">
-                  Stack: {this.state.projects[1].stack}
-                </Stacks>
-                <Url
-                  size="14px"
-                  href="https://limitless-mountain-11507.herokuapp.com/">
+                </ProjectInfoSmall>
+                <StacksSmall>Stack: {this.state.projects[1].stack}</StacksSmall>
+                <UrlSmall href="https://limitless-mountain-11507.herokuapp.com/">
                   https://limitless-mountain-11507.herokuapp.com/
-                </Url>
+                </UrlSmall>
               </Info>
             </PicSmall>
             <PicSmall color="black" />
@@ -236,14 +264,10 @@ class Portfolio extends Component {
           <PortfolioCol>
             <PicBig bg={trendr} onClick={this.showTrendr}>
               <Info onClick={this.showTrendr} open={this.state.trendrIsShowing}>
-                <Title size="1.5em">{this.state.projects[2].title}</Title>
-                <ProjectInfo height="23px" size="18px">
-                  {this.state.projects[2].info}
-                </ProjectInfo>
-                <Stacks size="18px">
-                  Stack: {this.state.projects[2].stack}
-                </Stacks>
-                <Url size="18px" href="https://trendr-3eddc.firebaseapp.com">
+                <Title>{this.state.projects[2].title}</Title>
+                <ProjectInfo>{this.state.projects[2].info}</ProjectInfo>
+                <Stacks>Stack: {this.state.projects[2].stack}</Stacks>
+                <Url href="https://trendr-3eddc.firebaseapp.com">
                   https://trendr-3eddc.firebaseapp.com
                 </Url>
               </Info>
