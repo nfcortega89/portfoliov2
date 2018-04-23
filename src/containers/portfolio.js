@@ -65,12 +65,12 @@ const PicBig = styled.div`
 const PicSmall = styled.div`
   background-image: url(${props => props.bg});
   background: ${props => props.color}
-  margin: 0.5em 0.5em;
+  margin: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 242px;
-  width:300px
+  width: 300px;
   opacity: 0.5;
   transition: 0.3s all ease-in;
   z-index: 1;
@@ -81,6 +81,7 @@ const PicSmall = styled.div`
   @media screen and (max-width:767px){
     width: 365px;
     height: 200px;
+    margin: 0.5em;
   }
 `;
 const Brush = styled.hr`

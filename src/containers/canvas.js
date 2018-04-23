@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../actions/header';
+import Resume from '../assets/NIKKORESUME1.pdf';
 
 const Wrapper = styled.div`
   z-index: 999;
@@ -24,12 +25,13 @@ const Drawing = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1em;
   @media screen and (max-width: 767px) {
     display: none;
   }
 `;
 
-const Link = styled.div`
+const Link = styled.a`
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -37,6 +39,12 @@ const Link = styled.div`
   justify-content: center;
   align-items: center;
   color: black;
+  text-decoration: none;
+  margin: 1em;
+  &:hover {
+    cursor: pointer;
+    color: purple;
+  }
 `;
 
 class Canvas extends Component {
@@ -44,10 +52,12 @@ class Canvas extends Component {
     return (
       <Wrapper onClick={this.props.closeNav} open={this.props.open}>
         <Drawing id="drawing" />
-        <Link>
+        <Link href="https://www.github.com/nfcortega89">
           <i className="fa fa-github-alt fa-3x" aria-hidden="true" />
         </Link>
-        <Link>Resume</Link>
+        <Link href={Resume} download>
+          Resume
+        </Link>
       </Wrapper>
     );
   }
