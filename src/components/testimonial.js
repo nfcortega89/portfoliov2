@@ -46,14 +46,30 @@ const TestimonialH2 = styled.h2`
     font-size: 1.2em;
   }
 `;
-const Brush = styled.hr`
-  width: ${props => props.width}
+const Brush1 = styled.hr`
+  width: 83px;
   position: absolute;
-  bottom: ${props => props.bottom};
-  left: ${props => props.left};
-  right: ${props => props.right};
-  top: ${props => props.top};
+  bottom: -17px;
+  left: 1px;
   border: 2px solid #404040;
+  @media screen and (max-width: 767px) {
+    border: 1px solid #404040;
+    width: 80px;
+    bottom: -10px;
+  }
+`;
+const Brush2 = styled.hr`
+  width: 80px;
+  position: absolute;
+  right: 383px;
+  top: -16px;
+  border: 2px solid #404040;
+  @media screen and (max-width: 767px) {
+    width: 60px;
+    border: 1px solid #404040;
+    top: -11px;
+    right: 265px;
+  }
 `;
 const TestimonialP = styled.p`
   line-height: 28px;
@@ -165,8 +181,8 @@ class Testimonial extends Component {
         <TestimonialBlock>
           <TestimonialH2>
             Testimonials
-            <Brush width="83px" bottom="-17px" left="1px" />
-            <Brush width="80px" top="-16px" right="383px" />
+            <Brush1 />
+            <Brush2 />
           </TestimonialH2>
           <TestimonialP>
             Nikko is an ambitious, driven and excellent problem solver. As his

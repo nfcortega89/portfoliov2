@@ -26,6 +26,9 @@ const AboutH2 = styled.h2`
   margin: 0 0 2em
   font-size: 1.5em;
   position: relative;
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
 const Brush1 = styled.div`
   position: absolute;
@@ -33,6 +36,12 @@ const Brush1 = styled.div`
   right: -3px;
   border: 2px solid #cacaca;
   width: 74px;
+  @media screen and (max-width: 767px) {
+    width: 54px;
+    top: -2px;
+    right: 0px;
+    border: 1px solid #cacaca;
+  }
 `;
 const Brush2 = styled.div`
   position: absolute;
@@ -40,6 +49,12 @@ const Brush2 = styled.div`
   left: -3px;
   border: 2px solid #cacaca;
   width: 74px;
+  @media screen and (max-width: 767px) {
+    border: 1px solid #cacaca;
+    bottom: 0px;
+    width: 40px;
+    left: -1px;
+  }
 `;
 const AboutBlock = styled.div`
   width: 100%;

@@ -84,14 +84,32 @@ const PicSmall = styled.div`
     margin: 0.5em;
   }
 `;
-const Brush = styled.hr`
-  width: ${props => props.width}
+const Brush1 = styled.hr`
+  width: 75px;
   position: absolute;
-  bottom: ${props => props.bottom};
-  left: ${props => props.left};
-  right: ${props => props.right};
-  top: ${props => props.top};
+  right: -6px;
+  top: -15px;
   border: 2px solid #cacaca;
+  position: absolute;
+  @media screen and (max-width: 767px) {
+    border: 1px solid #cacaca;
+    width: 60px;
+    top: -10px;
+    right: -4px;
+  }
+`;
+const Brush2 = styled.hr`
+  width: 75px;
+  position: absolute;
+  bottom: -15px;
+  left: -6px;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    width: 60px;
+    left: -1px;
+    bottom: -9px;
+    border: 1px solid #cacaca;
+  }
 `;
 const Info = styled.div`
   background: rgba(0, 0, 0, 0.5);
@@ -227,8 +245,8 @@ class Portfolio extends Component {
       <Wrapper className="Portfolio">
         <PortfolioH2>
           Portfolio
-          <Brush width="75px" top="-15px" right="-6px" />
-          <Brush width="75px" bottom="-15px" left="-6px" />
+          <Brush1 />
+          <Brush2 />
         </PortfolioH2>
         <PortfolioList>
           <PortfolioCol>
