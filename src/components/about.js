@@ -105,7 +105,7 @@ const BioP = styled.p`
     margin: 0;
     padding: 1em;
     font-size: 14px;
-    text-align: center;
+    text-align: justify;
   }
 `;
 const About = () => {
@@ -123,11 +123,11 @@ const About = () => {
         </PictureCol>
         <BioCol>
           <BioP>
-            Hi my name is Niccolo Ortega -a frontend developer based in Los
-            Angeles and recent grad from Thinkfuls' intensive mentorship
-            program. It was there I was able to learn web developing create
-            fullstack applications with the awesome power of Node.js and usage
-            of React for the frontend.
+            Hi my name is Niccolo Ortega - a front end developer based in Los
+            Angeles and recent grad from Thinkful’s intensive mentorship
+            program. It was there I was able to learn web development to create
+            full-stack applications with the awesome power of Node.js with React
+            for the front end.
           </BioP>
           <BioP>
             I primarily focus on writing clean, elegant, and efficient code and
@@ -138,9 +138,9 @@ const About = () => {
             paying close attention to detail.
           </BioP>
           <BioP>
-            I am also highly motivated and having the have the eagerness to
-            learn. When I am not coding on projects, I am usually doing a coding
-            challenge and picking up classes in Udemy to hone my skills further.
+            I am also highly motivated and have the eagerness to learn. When I
+            am not coding on projects, I am usually doing a coding challenge and
+            picking up classes in Udemy to hone my skills further.
           </BioP>
         </BioCol>
       </AboutBlock>

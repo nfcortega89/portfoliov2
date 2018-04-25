@@ -103,6 +103,7 @@ const Brush2 = styled.hr`
   position: absolute;
   bottom: -15px;
   left: -6px;
+  border: 2px solid #cacaca;
   @media screen and (max-width: 767px) {
     position: absolute;
     width: 60px;

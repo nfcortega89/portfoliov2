@@ -186,7 +186,7 @@ class Service extends Component {
         },
         {
           name: 'Dynamic',
-          info: 'Websites dont have to be static, why not give it some life.',
+          info: 'Websites dont have to be static, why not give it some life!',
           svg: (
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0V0z" fill="none" />
