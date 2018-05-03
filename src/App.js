@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Services from './components/services';
 import Skills from './components/skills';
-import Contact from './components/contact';
 import About from './components/about';
 import Footer from './components/footer';
 import Testimonial from './components/testimonial';
